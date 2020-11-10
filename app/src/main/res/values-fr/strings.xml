@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">Notifications</string>
     <string name="mensaje01">Message par défaut (Toast)</string>
+    <string name="mensaje02">Message avec un design personnalisé par nos soins</string>
+    <string name="descripcion">Canal de notification Android pour UD</string>
+    <string name="estado">¡Attention!</string>
+    <string name="titulo">Message d\'alerte</string>
+    <string name="descripcion1">Exemple de notification</string>
+    <string name="accion">Action</string>
+    <string name="saludo">Salut monde</string>
+    <string name="accion1">Action effectuée</string>
     <string name="boton01">TOAST 01</string>
     <string name="boton02">TOAST 02</string>
     <string name="boton03">TOAST 03</string>

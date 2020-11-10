@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
     }
     public void noti01(View v){
 
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = getLayoutInflater();
         View layout= inflater.inflate(R.layout.layout_toast,(ViewGroup) findViewById(R.id.layoutToast));
         TextView txtMsg=(TextView) layout.findViewById(R.id.mensajeLbl);
-        txtMsg.setText("Mensaje con diseño personalizado por nosotros");
+        txtMsg.setText(getResources().getString(R.string.mensaje02));
         toas1.setView(layout);
         toas1.show();
     }
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         NotificationManager ntManager = (NotificationManager)getSystemService(ns);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "ANDROID CHANNEL";
-            String descripcion = "Canal de Notificaciones de Android para la UD";
+            String descripcion = getResources().getString(R.string.descripcion);
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHannel_ID,name,importance);
             channel.setDescription(descripcion);
@@ -72,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         int icono = android.R.drawable.stat_sys_warning;
-        CharSequence textEstado="¡Atención!";
-        CharSequence titulo = "Mensaje de Alerta";
-        CharSequence descripcion = "Ejemplo de Notificación";
+        CharSequence textEstado=getResources().getString(R.string.estado);
+        CharSequence titulo = getResources().getString(R.string.titulo);
+        CharSequence descripcion = getResources().getString(R.string.descripcion1);
         long hora = System.currentTimeMillis();
         Context contexto = getApplicationContext();
         Intent notIntent = new Intent(contexto,MainActivity.class);
@@ -99,15 +103,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void noti05(View v){
 
-        String mess= getResources().getString(R.string.mensaje01);
-        Snackbar.make(v,mess,Snackbar.LENGTH_LONG)
-                .setAction("Acción", new View.OnClickListener() {
+        String mess1= getResources().getString(R.string.mensaje01);
+        Snackbar.make(v,mess1,Snackbar.LENGTH_LONG)
+                .setAction(getResources().getString(R.string.accion), new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast toast1 = Toast.makeText(getApplicationContext(),"Hola Mundo",Toast.LENGTH_LONG);
+                        Toast toast1 = Toast.makeText(getApplicationContext(),getResources().getString(R.string.saludo),Toast.LENGTH_LONG);
 
                         toast1.show();
-                        Log.i("SNACKBAR ","Acción Realizada");
+                        Log.i("SNACKBAR ",getResources().getString(R.string.accion1));
                     }
                 }).show();
 
